@@ -1,0 +1,27 @@
+Command line running
+java -jar bootjpaoracle-0.0.1-SNAPSHOT.jar (use internal properties)
+--Command Line - setting external properties for JAR
+java -jar bootjpaoracle-0.0.1-SNAPSHOT.jar --server.servlet.context-path=/inventory-uat (Override the specific internal properties)
+java -jar bootjpaoracle-0.0.1-SNAPSHOT.jar --spring.config.location=./application.properties  (Override all properties)
+
+environment vairable
+SPRING_CONFIG_LOCATION=file:C:\data\application.properties
+java -jar bootjpaoracle-0.0.1-SNAPSHOT.jar
+
+
+--Running external tomcat8
+https://dzone.com/articles/spring-boot-with-external-tomcat
+ 1. make depencency -  provided
+ 	<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+ 2. make the @springbootapplication class -  extends springbootservletinitializer
+ 3. pom.xml - <packaging>war</packaging> and <build><finalName>${artifactId}</finalName> </build> = for generate the war name
+ 4. eclipse "clean package or maven install" and copy the war into tomcat/webapps
+ 5. start the server and type url = http://localhost:8080/warName for context)
+
+--setting properties in external tomcat8
+ 1. /bin/startup.bat -  set "SPRING_CONFIG_LOCATION=%CATALINA_HOME%\conf\springapplication\application.properties"
+ 
