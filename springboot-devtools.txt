@@ -1,0 +1,26 @@
+Spring-Boot Dev
+
+1. pom.xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-devtools</artifactId>
+</dependency>
+
+
+
+Automatic Restart : 
+Whenever files change in the classpath, applications will cause the application to restart.
+
+
+Live Reload: 
+spring-boot-devtools module includes an embedded LiveReload server that is used to trigger a browser refresh when a resource is changed.
+automatically browser will update itself using the plugin remote live reload and only change effective with below directories
+
+/META-INF/maven
+/META-INF/resources
+/resources
+/static  - we have include abc.html in it and open chrome browser URL - http;//localhsot:8080/inventory/abc.html - and it automatically refresh on browser whenever the content change 
+/public
+/templates
+
+
